@@ -68,7 +68,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-600 mt-6 max-w-2xl mx-auto font-light"
           >
-            We're here to back founders who are going all in
+            We&apos;re here to back founders who are going all in
           </motion.p>
 
           {/* Scroll down arrow */}

@@ -9,7 +9,7 @@ export default function Footer() {
             <strong className="text-gray-900">SEBI REGISTRATION DETAILS</strong>
           </p>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Upsparks Capital Fund ("Fund") is registered with SEBI as a Category II Alternative Investment Fund. 
+            Upsparks Capital Fund (&ldquo;Fund&rdquo;) is registered with SEBI as a Category II Alternative Investment Fund. 
             Founder Capital Advisors LLP is the Investment Manager.
           </p>
           <p className="text-sm text-gray-600 mt-4">

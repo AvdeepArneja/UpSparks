@@ -188,14 +188,14 @@ export default function About() {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                         </svg>
                       </div>
-                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: '28rem' }}>
+                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: "28rem" }}>
                         From Elon Musk risking everything on Tesla to the Wright brothers flying in obscurity before the world took notice — history has shown that building something truly original demands absolute commitment.
                       </p>
                     </div>
 
                     {/* Second Paragraph with Icon - Right */}
                     <div className="relative mb-16 md:mb-20 lg:mb-24">
-                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: '28rem' }}>
+                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: "28rem" }}>
                         World-changing companies are never built halfway. They require time, capital, resilience, and the courage to move forward when belief is scarce.
                       </p>
                       {/* Icon - Right side */}
@@ -214,14 +214,14 @@ export default function About() {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                         </svg>
                       </div>
-                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: '28rem' }}>
+                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: "28rem" }}>
                         At <span className="text-primary-600 bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent font-semibold">UpSparks</span>, we respect the conviction it takes for a founder to begin. Starting a company is a leap few dare to take.
                       </p>
                     </div>
 
                     {/* Fourth Paragraph with Icon - Right */}
                     <div className="relative mb-16 md:mb-20 lg:mb-24">
-                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: '28rem' }}>
+                      <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-xl mx-auto px-6 sm:px-8" style={{ maxWidth: "28rem" }}>
                         That is why <span className="text-primary-600 bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent font-semibold">UpSparks</span> commits alongside you — with our capital, our time, and our network — backing founders who are ready to build with full conviction.
                       </p>
                       {/* Icon - Right side */}

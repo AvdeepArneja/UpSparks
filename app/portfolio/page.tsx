@@ -96,7 +96,7 @@ export default function PortfolioPage() {
             </Link>
           </div>
           <p className="text-lg text-gray-600">
-            We've helped 150+ founders go all in. Here are all our portfolio companies.
+            We&apos;ve helped 150+ founders go all in. Here are all our portfolio companies.
           </p>
         </motion.div>
 

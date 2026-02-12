@@ -235,7 +235,7 @@ export default function ApplyPage() {
                     </p>
                     
                     <p>
-                      This also means that if you are not the right fit for us (i.e. either we don't like the market or this is not the right stage for us etc) then we don't waste your time with a pointless call and we know as a founder, your own time is the most valuable resource you have.
+                      This also means that if you are not the right fit for us (i.e. either we don&apos;t like the market or this is not the right stage for us etc) then we don&apos;t waste your time with a pointless call and we know as a founder, your own time is the most valuable resource you have.
                     </p>
                     
                     <p>

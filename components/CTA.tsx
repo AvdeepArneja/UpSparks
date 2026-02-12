@@ -20,7 +20,7 @@ export default function CTA() {
         >
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-            Let's go all in together.
+            Let&apos;s go all in together.
           </h2>
           
           <motion.a

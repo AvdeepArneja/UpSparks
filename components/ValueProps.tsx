@@ -32,7 +32,7 @@ const valueProps = [
   },
   {
     title: 'Narrative is King',
-    description: 'Your startup\'s narrative attracts users, employees, and investors. Having done this with 100+ teams, we will help you craft the best possible narrative for your company!',
+    description: 'Your startup&apos;s narrative attracts users, employees, and investors. Having done this with 100+ teams, we will help you craft the best possible narrative for your company!',
         icon: (
           <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
             {/* Crown - simplified */}

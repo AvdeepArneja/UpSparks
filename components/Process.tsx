@@ -45,7 +45,7 @@ export default function Process() {
             Our Approach
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We've been in your shoes. We started with whiteboard ideas, grew, and then exited.
+            We&apos;ve been in your shoes. We started with whiteboard ideas, grew, and then exited.
             Our goal is to help you do the same.
           </p>
         </motion.div>

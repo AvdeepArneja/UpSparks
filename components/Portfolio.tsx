@@ -294,7 +294,7 @@ export default function Portfolio() {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            We've already helped 150+ founders go all in
+            We&apos;ve already helped 150+ founders go all in
           </h2>
         </motion.div>
 
@@ -349,7 +349,7 @@ export default function Portfolio() {
             </span>
           </h3>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Hear from founders who've gone all in with us
+            Hear from founders who&apos;ve gone all in with us
           </p>
         </motion.div>
 
@@ -382,7 +382,7 @@ export default function Portfolio() {
               >
                 {/* Testimonial Quote */}
                 <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-800 mb-8 leading-relaxed font-light italic min-h-[200px] md:min-h-[150px]">
-                  "{testimonials[currentTestimonialIndex].quote}"
+                  &ldquo;{testimonials[currentTestimonialIndex].quote}&rdquo;
                 </blockquote>
 
                 {/* Author Info */}

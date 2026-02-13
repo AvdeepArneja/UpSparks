@@ -129,7 +129,7 @@ function FlipCard({ frontCompany, backCompany, index, isInView, onFlip }: FlipCa
   };
 
   return (
-    <div
+    <motion.div
       className="relative w-full aspect-square cursor-pointer"
       style={{ 
         perspective: '1000px',
@@ -146,15 +146,16 @@ function FlipCard({ frontCompany, backCompany, index, isInView, onFlip }: FlipCa
       >
         {/* Front of card */}
         <motion.div
-          className="absolute inset-0 w-full h-full bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center"
+          className="absolute inset-0 w-full h-full bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 flex items-center justify-center border border-gray-100 group"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
             transform: 'rotateY(0deg)',
           }}
-          initial={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.05, y: -5 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: index * 0.02 }}
+          transition={{ duration: 0.6, delay: index * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <a
             href={frontCompany.url}
@@ -188,13 +189,14 @@ function FlipCard({ frontCompany, backCompany, index, isInView, onFlip }: FlipCa
         </motion.div>
 
         {/* Back of card */}
-        <div
-          className="absolute inset-0 w-full h-full bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center"
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 flex items-center justify-center border border-primary-200/50"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
           }}
+          whileHover={{ scale: 1.05 }}
         >
           <a
             href={backCompany.url}
@@ -225,9 +227,9 @@ function FlipCard({ frontCompany, backCompany, index, isInView, onFlip }: FlipCa
               }}
             />
           </a>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -284,26 +286,37 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-gray-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="relative py-32 bg-white overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary-300 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
             We&apos;ve already helped 150+ founders go all in
           </h2>
         </motion.div>
 
         {/* Partner Logos Grid with Flip Cards */}
-        <div className="mt-16 mb-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+        <div className="mb-20">
+          <motion.h3
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-12 text-center"
+          >
             Our Portfolio Companies
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          </motion.h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
             {Array.from({ length: CARDS_TO_DISPLAY }).map((_, index) => {
               const { front, back } = getCardCompanies(index);
               return (
@@ -342,13 +355,13 @@ export default function Portfolio() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-20 mb-12 text-center"
         >
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
             Voices from Our{' '}
-            <span className="text-primary-600 bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent">
               Partners
             </span>
           </h3>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
             Hear from founders who&apos;ve gone all in with us
           </p>
         </motion.div>
@@ -359,7 +372,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 relative overflow-hidden">
+          <div className="bg-white rounded-3xl p-10 md:p-16 shadow-2xl border border-gray-100 relative overflow-hidden">
             {/* Quote Icon */}
             <div className="mb-6">
               <svg 

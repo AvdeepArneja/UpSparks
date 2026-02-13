@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Team from './Team';
-import PartnerNetwork from './PartnerNetwork';
 import ValueProps from './ValueProps';
 import Portfolio from './Portfolio';
 import CTA from './CTA';
@@ -255,7 +254,6 @@ export default function About() {
                     }}
                   >
                     <Team />
-                    <PartnerNetwork />
                     <ValueProps />
                     <Portfolio />
                     <CTA />

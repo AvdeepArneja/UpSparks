@@ -1,10 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function AnimatedLogo() {
   // Split "UPSPARKS" into letters for subtle animation
   const letters = ['U', 'P', 'S', 'P', 'A', 'R', 'K', 'S'];
+  const { theme } = useTheme();
   
   return (
     <motion.div
@@ -19,7 +21,9 @@ export default function AnimatedLogo() {
         {letters.map((letter, index) => (
           <motion.span
             key={index}
-            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight"
+            className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight transition-colors duration-500 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ 
               opacity: 1, 
@@ -41,16 +45,16 @@ export default function AnimatedLogo() {
       
       {/* Subtle underline accent with gentle animation */}
       <motion.div
-        className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600"
+        className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500"
         initial={{ scaleX: 0 }}
         animate={{ 
           scaleX: 1,
-          opacity: [0.7, 1, 0.7],
+          opacity: [0.8, 1, 0.8],
         }}
         transition={{
-          scaleX: { duration: 0.6, delay: 0.5, ease: "easeOut" },
+          scaleX: { duration: 0.8, delay: 0.5, ease: "easeOut" },
           opacity: {
-            duration: 3,
+            duration: 2.5,
             delay: 1.2,
             repeat: Infinity,
             ease: "easeInOut",
@@ -58,6 +62,7 @@ export default function AnimatedLogo() {
         }}
         style={{
           transformOrigin: 'left center',
+          backgroundSize: '200% 100%',
         }}
       />
       
@@ -87,7 +92,9 @@ export default function AnimatedLogo() {
         >
         {/* Minimal rocket icon */}
         <motion.svg
-          className="w-6 h-6 md:w-7 md:h-7 text-primary-600"
+               className={`w-6 h-6 md:w-7 md:h-7 drop-shadow-lg transition-colors duration-500 ${
+                 theme === 'dark' ? 'text-primary-600' : 'text-green-600'
+               }`}
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -110,16 +117,16 @@ export default function AnimatedLogo() {
           />
         </motion.svg>
         
-        {/* Yellow fire exhaust trail - perfectly centered */}
+        {/* Red fire exhaust trail - perfectly centered */}
         <motion.div
           className="w-1.5 h-7 rounded-full"
           style={{
-            background: 'linear-gradient(to top, rgba(251, 191, 36, 0.8), rgba(250, 204, 21, 0.6), rgba(255, 237, 213, 0.4), transparent)',
+            background: 'linear-gradient(to top, rgba(220, 38, 38, 0.9), rgba(239, 68, 68, 0.7), rgba(248, 113, 113, 0.5), rgba(254, 202, 202, 0.3), transparent)',
             marginTop: '2px',
           }}
           animate={{
-            scaleY: [0.9, 1.2, 0.9],
-            opacity: [0.6, 0.9, 0.6],
+            scaleY: [0.9, 1.3, 0.9],
+            opacity: [0.7, 1, 0.7],
           }}
           transition={{
             duration: 1.5,

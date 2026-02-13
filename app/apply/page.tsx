@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const pitchMethods = [
   {
@@ -74,8 +75,34 @@ export default function ApplyPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       
+      {/* Back Button */}
+      <section className="pt-24 pb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link href="/">
+            <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ scale: 1.05, x: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors group"
+            >
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:-translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <span className="font-semibold">Back to Home</span>
+            </motion.button>
+          </Link>
+        </div>
+      </section>
+      
       {/* ALL IN Banner */}
-      <section className="pt-32 pb-12">
+      <section className="pt-4 pb-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,11 +136,11 @@ export default function ApplyPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
               >
-                <div className="text-primary-600 mb-6">{method.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{method.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{method.description}</p>
+                <div className="text-primary-600 mb-6 flex-shrink-0">{method.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex-shrink-0">{method.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{method.description}</p>
                 <motion.button
                   onClick={() => {
                     if (index === 2) {
@@ -122,7 +149,7 @@ export default function ApplyPage() {
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                  className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors mt-auto"
                 >
                   READ MORE
                 </motion.button>
